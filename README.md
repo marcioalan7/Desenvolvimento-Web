@@ -1,3 +1,3 @@
-# Atv-Web-CRUDs
+# Desenvolvimento-Web
 
-Continuação de outro projeto. Realização de 2 CRUDs.
+Códigos de aulas e atividades de Desenvolvimento Web.
