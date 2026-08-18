@@ -1,0 +1,30 @@
+<h1>Diretores</h1>
+
+<table border = '1'>
+    <tr>
+        <th>Nome</th>
+        <th>Ano de Nascimento</th>
+        <th>Está em Atividade?</th>
+    </tr>
+
+        {{#each diretores}}
+
+    <tr>
+        <td>{{nome}}</td>
+        <td>{{anoNascimento}}</td>
+        <td>{{atv}}</td>
+
+        <td>
+            <a href = '/editar/diretores/{{id}}'>Editar</a>
+
+            <form action = '/deletar/diretores/{{id}}?_method=DELETE' method='POST'>
+                <button type = 'submit'>Excluir</button>
+            </form>
+        </td>
+    </tr>
+
+    {{/each}}
+
+</table>
+
+<a href = '/'>Home</a>

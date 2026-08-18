@@ -1,0 +1,11 @@
+<form action = '/editar/filmes/{{filme.id}}?_method=PUT' method='POST'>
+
+    <label>Nome</label>
+    <input type = 'text' name = 'nome' value = '{{filme.nome}}'>
+    
+    <label>Ano de Lançamento</label>
+    <input type = 'text' name = 'anoLancamento' value = '{{filme.anoLancamento}}'>
+
+    <button type = 'submit'>Editar</button>
+
+</form>
