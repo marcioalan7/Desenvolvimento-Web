@@ -1,0 +1,14 @@
+<form action = '/editar/fichas/{{ficha.id}}?_method=PUT' method='POST'>
+
+    <label>Duração</label>
+    <input type = 'number' name = 'duracao' value = '{{ficha.duracao}}'>
+    
+    <label>Orçamento</label>
+    <input type = 'number' name = 'orcamento' value = '{{ficha.orcamento}}'>
+
+    <label>Bilheteria</label>
+    <input type = 'number' name = 'bilheteria' value = '{{ficha.orcamento}}'>
+
+    <button type = 'submit'>Editar</button>
+
+</form>

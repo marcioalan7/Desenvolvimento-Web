@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD's</title>
+</head>
+<body>
+    <p>Este sistema permite o cadastro de filmes, artistas e diretores.</p>
+    <ul>
+        <li><a href = '/cadastrar/filmes'>Cadastre Filmes</a></li>
+        <li><a href = '/cadastrar/artistas'>Cadastre Artistas</a></li>
+        <li><a href = '/cadastrar/diretores'>Cadastre Diretores</a></li>
+        {{#each filmes}}
+            <li>
+                <a href="/filmes/{{this.id}}/cadastrar/fichas">
+                    Cadastre Ficha Técnica de {{this.nome}}
+                </a>
+            </li>
+        {{/each}}
+    </ul>
+
+    <ul>
+        <li><a href = '/filmes'>Visualize, Edite e Exclua Filmes</a></li>
+        <li><a href = '/artistas'>Visualize, Edite e Exclua Artistas</a></li>
+        <li><a href = '/diretores'>Visualize, Edite e Exclua Diretores</a></li>
+        <li><a href = '/fichas'>Visualize, Edite e Exclua Fichas Técnicas</a></li>
+    </ul>
+
+</body>
+</html>

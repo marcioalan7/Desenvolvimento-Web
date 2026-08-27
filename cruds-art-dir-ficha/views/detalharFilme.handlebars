@@ -1,0 +1,10 @@
+<label>Ficha Técnica</label>
+{{#if filme.ficha}}
+  <ul>
+    <li>Duração: {{filme.ficha.duracao}} minutos</li>
+    <li>Orçamento: {{filme.ficha.orcamento}}</li>
+    <li>Bilheteria: {{filme.ficha.bilheteria}}</li>
+  </ul>
+{{else}}
+  <a href="/filmes/{{filme.id}}/cadastrar/ficha">Cadastrar ficha técnica</a>
+{{/if}}

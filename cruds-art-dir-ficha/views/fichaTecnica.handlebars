@@ -1,0 +1,30 @@
+<h1>Ficha Técnica</h1>
+
+<table border = '1'>
+    <tr>
+        <th>Duração</th>
+        <th>Orçamento</th>
+        <th>Bilheteria</th>
+    </tr>
+
+        {{#each fichas}}
+
+    <tr>
+        <td>{{duracao}}</td>
+        <td>{{orcamento}}</td>
+        <td>{{bilheteria}}</td>
+
+        <td>
+            <a href = '/editar/fichas/{{id}}'>Editar</a>
+
+            <form action = '/deletar/fichas/{{id}}?_method=DELETE' method='POST'>
+                <button type = 'submit'>Excluir</button>
+            </form>
+        </td>
+    </tr>
+
+    {{/each}}
+
+</table>
+
+<a href = '/'>Home</a>
