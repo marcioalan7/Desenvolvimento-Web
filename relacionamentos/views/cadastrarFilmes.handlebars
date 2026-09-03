@@ -1,0 +1,39 @@
+<h1>Cadastrar Filme</h1> <form action="/cadastrar/filmes" method="POST">
+<label>Nome do filme:</label>
+<input type="text" name="nome" required>
+
+<br><br>
+
+<label>Ano de lançamento:</label>
+<input type="text" name="anoLancamento" required>
+
+<br><br>
+
+<label>Diretor:</label>
+
+<select name="diretorId" required>
+    <option value="">Selecione um diretor</option>
+
+    {{#each diretores}}
+        <option value="{{this.id}}">
+            {{this.nome}}
+        </option>
+    {{/each}}
+
+</select>
+
+<br><br>
+
+<label>Artistas:</label>
+
+    <select name="artistas" multiple>
+      {{#each artistas}}
+        <option value="{{this.id}}">{{this.nome}}</option>
+      {{/each}}
+    </select>
+
+<button type="submit">Cadastrar Filme</button>
+
+</form> <br>
+
+<a href="/filmes">Voltar para filmes</a>

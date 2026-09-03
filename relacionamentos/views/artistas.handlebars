@@ -1,0 +1,36 @@
+<h1>Artistas</h1>
+
+<table border = '1'>
+    <tr>
+        <th>Nome</th>
+        <th>Ano de Nascimento</th>
+        <th>Foto</th>
+        <th>Nome Artístico</th>
+        <th>Técnicas de Atuação</th>
+        <th>Está em Atividade?</th>
+    </tr>
+
+        {{#each artistas}}
+
+    <tr>
+        <td>{{nome}}</td>
+        <td>{{anoNascimento}}</td>
+        <td><img src="{{foto}}" width="100"></td>
+        <td>{{nomeArtistico}}</td>
+        <td>{{tecAtuacao}}</td>
+        <td>{{atv}}</td>
+
+        <td>
+            <a href = '/editar/artistas/{{id}}'>Editar</a>
+
+            <form action = '/deletar/artistas/{{id}}?_method=DELETE' method='POST'>
+                <button type = 'submit'>Excluir</button>
+            </form>
+        </td>
+    </tr>
+
+    {{/each}}
+
+</table>
+
+<a href = '/'>Home</a>
