@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autores e Livros</title>
+</head>
+<body>
+    <h1>Autores e Livros</h1>
+    <a href="/">Home</a>
+    <br>
+    <a href = '/cadastrarAutorLivros'>Cadastre novo autor e livros</a>
+
+    {{#each autores}}
+
+        <h2>Autor: {{nome}}</h2>
+
+        {{#if livros}}
+            <h3>Livros:</h3>
+
+            <ul>
+                {{#each livros}}
+                    <li>{{titulo}}</li>
+                {{/each}}
+            </ul>
+
+        {{else}}
+            <p>Este autor ainda não possui livros.</p>
+        {{/if}}
+
+        <hr>
+
+    {{/each}}
+
+</body>
+</html>

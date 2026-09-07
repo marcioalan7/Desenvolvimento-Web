@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhar Pessoa</title>
+</head>
+<body>
+    <h1>{{ pessoa.nome }}</h1>
+    <a href = '/'>Home</a>
+    <br>
+    <label>Passaporte:</label>
+    {{#if pessoa.passaporte}}
+    <ul>
+        <li>Número: {{ pessoa.passaporte.numero }}</li>
+        <li>Validade: {{ pessoa.passaporte.validade }}</li>
+    </ul>
+
+    {{else}}
+    <p>Essa pessoa ainda não possui passaporte</p>
+
+    {{/if}}
+</body>
+</html>
