@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhar Livro</title>
+</head>
+<body>
+    <h1>Detalhes do Livro</h1>
+
+    <h2>{{livro.titulo}}</h2>
+
+    <p>
+        <strong>Ano de publicação:</strong>
+        {{livro.anoPublicacao}}
+    </p>
+
+    <p>
+        <strong>Autor:</strong>
+        {{livro.autor.nome}}
+    </p>
+
+    <h3>Categorias:</h3>
+
+    {{#if livro.categorias}}
+
+        <ul>
+            {{#each livro.categorias}}
+                <li>{{nome}}</li>
+            {{/each}}
+        </ul>
+
+    {{else}}
+
+        <p>Este livro não possui categorias.</p>
+
+    {{/if}}
+
+</body>
+</html>

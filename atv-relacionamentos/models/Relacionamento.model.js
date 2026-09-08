@@ -3,6 +3,7 @@ const Pessoa = require('./Pessoa.model')
 const Passaporte = require('./Passaporte.model')
 const Autor = require('./Autor.model')
 const Livro = require('./Livro.model')
+const Categoria = require('./Categoria.model')
 
 Pessoa.hasOne(
     Passaporte, {
@@ -32,9 +33,26 @@ Livro.belongsTo(
     }
 )
 
+Categoria.belongsToMany(
+    Livro, {
+        through: 'CategoriaLivro',
+        foreignKey: 'categoriaId',
+        as: 'livros'
+    }
+)
+
+Livro.belongsToMany(
+    Categoria, {
+        through: 'CategoriaLivro',
+        foreignKey: 'livroId',
+        as: 'categorias'
+    }
+)
+
 module.exports = {
     Pessoa,
     Passaporte,
     Autor,
-    Livro
+    Livro,
+    Categoria
 }

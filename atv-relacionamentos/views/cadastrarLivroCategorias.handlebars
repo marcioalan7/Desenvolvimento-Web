@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Livro e Categorias</title>
+</head>
+<body>
+    <h1>Cadastrar Livro e Categorias</h1>
+
+    <form action="/cadastrarLivroCategorias" method="POST">
+
+        <h2>Livro</h2>
+
+        <label>Título:</label>
+        <input type="text" name="titulo" required>
+
+        <br><br>
+
+        <label>Ano de publicação:</label>
+        <input type="number" name="anoPublicacao" required>
+
+        <h2>Categorias</h2>
+
+        <label>Categoria 1:</label>
+        <input type="text" name="categoria1" required>
+
+        <br><br>
+
+        <label>Categoria 2:</label>
+        <input type="text" name="categoria2" required>
+
+        <br><br>
+
+        <button type="submit">Cadastrar</button>
+
+    </form>
+
+</body>
+</html>
