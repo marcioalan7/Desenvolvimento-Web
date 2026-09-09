@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Detalhar Criador</title>
+</head>
+
+<body>
+
+    <h1>{{criador.nome}}</h1>
+
+    <p>
+        @{{criador.nomeUsuario}}
+    </p>
+
+    <p>
+        Seguidores: {{criador.seguidores}}
+    </p>
+
+    <h2>Perfil</h2>
+
+    <p>
+        <strong>Bio:</strong>
+        {{criador.perfil.bio}}
+    </p>
+
+    <p>
+        <strong>Foto:</strong>
+        {{criador.perfil.fotoUrl}}
+    </p>
+
+    <p>
+        <strong>Rede social:</strong>
+        <a href="{{criador.perfil.linkRedeSocial}}">
+            {{criador.perfil.linkRedeSocial}}
+        </a>
+    </p>
+
+    <h2>Vídeos publicados</h2>
+
+    <ul>
+
+        {{#each criador.videos}}
+
+            <li>
+                <a href="/video/{{id}}">
+                    {{titulo}}
+                </a>
+            </li>
+
+        {{/each}}
+
+    </ul>
+
+    <br>
+    <a href = '/'>Home</a>
+
+</body>
+</html>

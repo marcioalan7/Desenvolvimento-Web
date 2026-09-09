@@ -4,6 +4,10 @@ const Passaporte = require('./Passaporte.model')
 const Autor = require('./Autor.model')
 const Livro = require('./Livro.model')
 const Categoria = require('./Categoria.model')
+const Criador = require('./Criador.model')
+const Video = require('./Video.model')
+const PerfilCriador = require('./perfilCriador.model')
+const Hastag = require('./Hastag.model')
 
 Pessoa.hasOne(
     Passaporte, {
@@ -49,10 +53,58 @@ Livro.belongsToMany(
     }
 )
 
+Criador.hasMany(
+    Video, {
+        foreignKey: 'criadorId',
+        as: 'videos'
+    }
+)
+
+Video.belongsTo(
+    Criador, {
+        foreignKey: 'criadorId',
+        as: 'criador'
+    }
+)
+
+Criador.hasOne(
+    PerfilCriador, {
+        foreignKey: 'criadorId',
+        as: 'perfil'
+    }
+)
+
+PerfilCriador.belongsTo(
+    Criador, {
+        foreignKey: 'criadorId',
+        as: 'criador'
+    }
+)
+
+Video.belongsToMany(
+    Hastag, {
+        through: 'VideoHastag',
+        foreignKey: 'videoId',
+        as: 'hastags'
+    }
+)
+
+Hastag.belongsToMany(
+    Video, {
+        through: 'VideoHastag',
+        foreignKey: 'hastagId',
+        as: 'videos'
+    }
+)
+
 module.exports = {
     Pessoa,
     Passaporte,
     Autor,
     Livro,
-    Categoria
+    Categoria,
+    Criador,
+    Video,
+    PerfilCriador,
+    Hastag
 }

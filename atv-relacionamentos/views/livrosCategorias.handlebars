@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livros e Categorias</title>
+</head>
+<body>
+    <h1>Livros e Categorias</h1>
+    <a href = '/'>Home</a>
+    <br>
+
+    {{#each livros}}
+
+        <h2>{{titulo}}</h2>
+
+        <p>
+            <strong>Ano de publicação:</strong>
+            {{anoPublicacao}}
+        </p>
+
+        <p>
+            <strong>Autor:</strong>
+            {{autor.nome}}
+        </p>
+
+        <h3>Categorias:</h3>
+
+        {{#if categorias}}
+
+            <ul>
+                {{#each categorias}}
+                    <li>{{nome}}</li>
+                {{/each}}
+            </ul>
+
+        {{else}}
+
+            <p>Este livro não possui categorias.</p>
+
+        {{/if}}
+
+        <hr>
+
+    {{/each}}
+
+</body>
+</html>

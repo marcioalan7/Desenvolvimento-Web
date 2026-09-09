@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastrar Criador</title>
+</head>
+<body>
+
+    <h1>Cadastrar Criador</h1>
+
+    <form action="/cadastrarCriador" method="POST">
+
+        <label>Nome:</label>
+        <input type="text" name="nome" required>
+
+        <br><br>
+
+        <label>Nome de usuário:</label>
+        <input type="text" name="nomeUsuario" required>
+
+        <br><br>
+
+        <label>Seguidores:</label>
+        <input type="number" name="seguidores" value="0" min="0">
+
+        <br><br>
+
+        <button type="submit">Cadastrar</button>
+
+    </form>
+
+    <br>
+
+    <a href="/">Home</a>
+
+</body>
+</html>

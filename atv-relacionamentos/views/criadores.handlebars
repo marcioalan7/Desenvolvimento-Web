@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Criadores</title>
+</head>
+<body>
+
+    <h1>Lista de Criadores</h1>
+
+    {{#each criadores}}
+
+        <h2>{{nome}}</h2>
+
+        <p>Usuário: @{{nomeUsuario}}</p>
+
+        <p>Seguidores: {{seguidores}}</p>
+
+        <a href="/criador/{{id}}">
+            Ver perfil
+        </a>
+
+        <hr>
+
+    {{/each}}
+
+    <br>
+
+    <a href="/cadastrarCriador">
+        Cadastrar novo criador
+    </a>
+
+    <br><br>
+
+    <a href="/"> Home</a>
+
+</body>
+</html>

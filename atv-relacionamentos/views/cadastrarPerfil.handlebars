@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastrar Perfil</title>
+</head>
+<body>
+
+    <h1>Cadastrar Perfil do Criador</h1>
+
+    <form action="/cadastrarPerfil" method="POST">
+
+        <label>Criador:</label>
+
+        <select name="criadorId" required>
+            <option value="">Selecione um criador</option>
+
+            {{#each criadores}}
+                <option value="{{id}}">
+                    {{nome}} (@{{nomeUsuario}})
+                </option>
+            {{/each}}
+
+        </select>
+
+        <br><br>
+
+        <label>Bio:</label>
+        <br>
+        <textarea name="bio" required></textarea>
+
+        <br><br>
+
+        <label>URL da foto:</label>
+        <input type="text" name="fotoUrl" required>
+
+        <br><br>
+
+        <label>Link da rede social:</label>
+        <input type="text" name="linkRedeSocial" required>
+
+        <br><br>
+
+        <button type="submit">Cadastrar Perfil</button>
+
+    </form>
+
+    <br>
+
+    <a href="/">Home</a>
+
+</body>
+</html>

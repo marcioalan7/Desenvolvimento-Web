@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Vídeos</title>
+</head>
+<body>
+
+    <h1>Lista de Vídeos</h1>
+
+    {{#each videos}}
+
+        <h2>{{titulo}}</h2>
+
+        <p>{{descricao}}</p>
+
+        <p>
+            Criador:
+            <a href="/criador/{{criador.id}}">
+                {{criador.nome}}
+            </a>
+        </p>
+
+        <a href="/video/{{id}}">
+            Ver vídeo
+        </a>
+
+        <hr>
+
+    {{/each}}
+
+    <br>
+
+    <a href="/cadastrarVideo">
+        Cadastrar novo vídeo
+    </a>
+
+    <br><br>
+
+    <a href="/">Home</a>
+
+</body>
+</html>

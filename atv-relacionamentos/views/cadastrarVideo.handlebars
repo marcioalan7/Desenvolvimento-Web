@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Cadastrar Vídeo</h1>
+
+
+    <form action = '/cadastrarVideo' method = 'POST'>
+    
+    <label>Título:</label>
+    <input type = 'text' name = 'titulo'>
+
+    <label>Descrição</label>
+    <input type = 'text' name = 'descricao'>
+
+    <label>Criador:</label>
+
+    <select name="criadorId" required>
+
+    <option value="">Selecione um criador</option>
+
+    {{#each criadores}}
+        <option value="{{id}}">
+            {{nome}} (@{{nomeUsuario}})
+        </option>
+    {{/each}}
+
+    </select>
+
+    <label>Hastags:</label>
+
+    <select name="hastagIds" multiple required>
+
+    {{#each hastags}}
+        <option value="{{id}}">
+            #{{nome}}
+        </option>
+    {{/each}}
+
+    </select>
+
+    <br><br>
+    <button type = 'submit'>Cadastrar</button>
+    
+    </form>
+    
+</body>
+</html>
