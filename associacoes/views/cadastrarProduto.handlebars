@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Produto</title>
+</head>
+<body>
+    <h1>Cadastrar Produto</h1>
+    <a href = '/'>Home</a>
+    <br>
+
+    <form action = '/cadastrarProduto' method = 'POST'>
+    
+        <label>Nome:</label>
+        <input type = 'text' name = 'nome'>
+
+        <label>Preço:</label>
+        <input type = 'number' name = 'preco'>
+
+        <label>Quantidade:</label>
+        <input type = 'number' name = 'quantidade'>
+
+        <label>Categoria:</label>
+        <select name = 'categoriaId'>
+            {{#each categorias}}
+                <option value = '{{this.id}}'>{{this.tipo}}</option>
+            {{/each}}
+        </select>
+
+        <label>Vendedores:</label>
+        <select name="vendedores" multiple>
+            {{#each vendedores}}
+                <option value="{{this.id}}">{{this.nome}}</option>
+            {{/each}}
+        </select>
+
+        <button type = 'submit'>Cadastrar</button>
+
+    </form>
+</body>
+</html>

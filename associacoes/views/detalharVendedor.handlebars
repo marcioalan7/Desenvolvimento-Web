@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhar Vendedor</title>
+</head>
+<body>
+    <h1>{{vendedor.nome}}</h1>
+
+    <label>Produtos:</label>
+    <ul>
+    {{#each vendedor.produtos}}
+        <li><a href="/produtos/{{this.id}}">{{this.nome}}</a></li>
+    {{/each}}
+    </ul>
+</body>
+</html>

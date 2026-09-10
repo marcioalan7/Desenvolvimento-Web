@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhar Produto</title>
+</head>
+<body>
+    <h1>{{produto.nome}}</h1>
+
+    <label>Categoria:</label>
+    {{#if produto.categoria}}
+        <a href="/categorias/{{produto.categoria.id}}">{{produto.categoria.tipo}}</a>
+    {{/if}}
+
+    <label>Vendedores:</label>
+    <ul>
+    {{#each produto.vendedores}}
+        <li><a href="/vendedores/{{this.id}}">{{this.nome}}</a></li>
+    {{/each}}
+</ul>
+</body>
+</html>
